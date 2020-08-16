@@ -1,0 +1,51 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>total revol_bal</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="loan_amnt" placeholder="loan_amnt" required="required" />
+        <input type="text" name="terms" placeholder="terms" required="required" />
+        <input type="text" name="Rate_of_intrst" placeholder="Rate_of_intrst" required="required" />
+        <input type="text" name="annual_inc" placeholder="annual_inc" required="required" />
+        <input type="text" name="debt_income_ratio" placeholder="debt_income_ratio" required="required" />
+        <input type="text" name="delinq_2yrs" placeholder="delinq_2yrs" required="required" />
+        <input type="text" name="inq_last_6mths" placeholder="inq_last_6mths" required="required" />
+        <input type="text" name="mths_since_last_delinq" placeholder="mths_since_last_delinq" required="required" />
+        <input type="text" name="mths_since_last_record" placeholder="mths_since_last_record" required="required" />
+        <input type="text" name="numb_credit" placeholder="numb_credit" required="required" />
+        <input type="text" name="total_credits" placeholder="total_credits" required="required" />
+        <input type="text" name="total_rec_int" placeholder="total_rec_int" required="required" />
+        <input type="text" name="total_rec_late_fee" placeholder="total_rec_late_fee" required="required" />
+        <input type="text" name="recoveries" placeholder="recoveries" required="required" />
+        <input type="text" name="collection_recovery_fee" placeholder="collection_recovery_fee" required="required" />
+        <input type="text" name="collections_12_mths_ex_med" placeholder="collections_12_mths_ex_med" required="required" />
+        <input type="text" name="collection_recovery_fee" placeholder="collection_recovery_fee" required="required" />
+        <input type="text" name="mths_since_last_major_derog" placeholder="mths_since_last_major_derog" required="required" />
+        <input type="text" name="collection_recovery_fee" placeholder="collection_recovery_fee" required="required" />
+        <input type="text" name="acc_now_delinq" placeholder="acc_now_delinq" required="required" />
+        <input type="text" name="tot_colle_amt" placeholder="tot_colle_amt" required="required" />
+        <input type="text" name="tot_curr_bal" placeholder="tot_curr_bal" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
